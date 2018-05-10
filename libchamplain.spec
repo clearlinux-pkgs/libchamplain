@@ -4,7 +4,7 @@
 #
 Name     : libchamplain
 Version  : 0.12.16
-Release  : 1
+Release  : 2
 URL      : https://download.gnome.org/sources/libchamplain/0.12/libchamplain-0.12.16.tar.xz
 Source0  : https://download.gnome.org/sources/libchamplain/0.12/libchamplain-0.12.16.tar.xz
 Summary  : Gtk+ Widget wrapper for libchamplain
