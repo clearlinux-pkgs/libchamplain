@@ -4,7 +4,7 @@
 #
 Name     : libchamplain
 Version  : 0.12.19
-Release  : 3
+Release  : 4
 URL      : https://download.gnome.org/sources/libchamplain/0.12/libchamplain-0.12.19.tar.xz
 Source0  : https://download.gnome.org/sources/libchamplain/0.12/libchamplain-0.12.19.tar.xz
 Summary  : A map widget
@@ -85,7 +85,14 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1551715820
+export SOURCE_DATE_EPOCH=1557014049
+export AR=gcc-ar
+export RANLIB=gcc-ranlib
+export NM=gcc-nm
+export CFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
+export FCFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
+export FFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
+export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=4 "
 CFLAGS="$CFLAGS" CXXFLAGS="$CXXFLAGS" LDFLAGS="$LDFLAGS" meson --prefix /usr --buildtype=plain   builddir
 ninja -v -C builddir
 
@@ -102,6 +109,10 @@ DESTDIR=%{buildroot} ninja -C builddir install
 /usr/lib64/girepository-1.0/Champlain-0.12.typelib
 /usr/lib64/girepository-1.0/GtkChamplain-0.12.typelib
 /usr/share/gir-1.0/*.gir
+/usr/share/vala/vapi/champlain-0.12.deps
+/usr/share/vala/vapi/champlain-0.12.vapi
+/usr/share/vala/vapi/champlain-gtk-0.12.deps
+/usr/share/vala/vapi/champlain-gtk-0.12.vapi
 
 %files dev
 %defattr(-,root,root,-)
