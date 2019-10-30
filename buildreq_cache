@@ -1,2 +1,10 @@
-0.12.19
+0.12.20
+gtk-doc-dev
+libsoup-dev
+pkgconfig(clutter-1.0)
+pkgconfig(clutter-gtk-1.0)
+pkgconfig(gtk-doc)
+pkgconfig(libsoup-2.4)
+pkgconfig(sqlite3)
+sqlite-autoconf-dev
 vala
