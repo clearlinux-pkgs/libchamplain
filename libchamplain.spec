@@ -4,7 +4,7 @@
 #
 Name     : libchamplain
 Version  : 0.12.20
-Release  : 5
+Release  : 6
 URL      : https://download.gnome.org/sources/libchamplain/0.12/libchamplain-0.12.20.tar.xz
 Source0  : https://download.gnome.org/sources/libchamplain/0.12/libchamplain-0.12.20.tar.xz
 Summary  : No detailed summary available
@@ -72,20 +72,21 @@ license components for the libchamplain package.
 
 %prep
 %setup -q -n libchamplain-0.12.20
+cd %{_builddir}/libchamplain-0.12.20
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1572449291
+export SOURCE_DATE_EPOCH=1586238998
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
 export CFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
-export FCFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
-export FFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
+export FCFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=4 "
+export FFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=4 "
 export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=4 "
 CFLAGS="$CFLAGS" CXXFLAGS="$CXXFLAGS" LDFLAGS="$LDFLAGS" meson --libdir=lib64 --prefix=/usr --buildtype=plain   builddir
 ninja -v -C builddir

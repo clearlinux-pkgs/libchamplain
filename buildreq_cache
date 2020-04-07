@@ -7,4 +7,3 @@ pkgconfig(gtk-doc)
 pkgconfig(libsoup-2.4)
 pkgconfig(sqlite3)
 sqlite-autoconf-dev
-vala
