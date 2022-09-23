@@ -4,7 +4,7 @@
 #
 Name     : libchamplain
 Version  : 0.12.20
-Release  : 8
+Release  : 9
 URL      : https://download.gnome.org/sources/libchamplain/0.12/libchamplain-0.12.20.tar.xz
 Source0  : https://download.gnome.org/sources/libchamplain/0.12/libchamplain-0.12.20.tar.xz
 Summary  : No detailed summary available
