@@ -4,7 +4,7 @@
 #
 Name     : libchamplain
 Version  : 0.12.20
-Release  : 9
+Release  : 10
 URL      : https://download.gnome.org/sources/libchamplain/0.12/libchamplain-0.12.20.tar.xz
 Source0  : https://download.gnome.org/sources/libchamplain/0.12/libchamplain-0.12.20.tar.xz
 Summary  : No detailed summary available
@@ -21,8 +21,6 @@ BuildRequires : pkgconfig(clutter-1.0)
 BuildRequires : pkgconfig(clutter-gtk-1.0)
 BuildRequires : pkgconfig(gtk-doc)
 BuildRequires : pkgconfig(libsoup-2.4)
-BuildRequires : pkgconfig(sqlite3)
-BuildRequires : sqlite-autoconf-dev
 
 %description
 libchamplain - a map widget
@@ -79,21 +77,21 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1586238998
+export SOURCE_DATE_EPOCH=1664156576
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
-export CFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
-export FCFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=4 "
-export FFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=4 "
-export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=4 "
+export CFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=auto "
+export FCFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=auto "
+export FFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=auto "
+export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=auto "
 CFLAGS="$CFLAGS" CXXFLAGS="$CXXFLAGS" LDFLAGS="$LDFLAGS" meson --libdir=lib64 --prefix=/usr --buildtype=plain   builddir
 ninja -v -C builddir
 
 %install
 mkdir -p %{buildroot}/usr/share/package-licenses/libchamplain
-cp %{_builddir}/libchamplain-0.12.20/COPYING %{buildroot}/usr/share/package-licenses/libchamplain/9a1929f4700d2407c70b507b3b2aaf6226a9543c
+cp %{_builddir}/libchamplain-%{version}/COPYING %{buildroot}/usr/share/package-licenses/libchamplain/9a1929f4700d2407c70b507b3b2aaf6226a9543c || :
 DESTDIR=%{buildroot} ninja -C builddir install
 
 %files
