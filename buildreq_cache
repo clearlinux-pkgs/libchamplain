@@ -1,7 +1,5 @@
-0.12.20
+0.12.21
 gtk-doc-dev
-libsoup-dev
 pkgconfig(clutter-1.0)
 pkgconfig(clutter-gtk-1.0)
 pkgconfig(gtk-doc)
-pkgconfig(libsoup-2.4)
